@@ -1,5 +1,9 @@
 // Added DrivingCost function to calculate trip driving costs
+
+// Function to compute the cost of driving given the miles driven, vehicle efficiency, and fuel price
 Function DrivingCost(float drivenMiles, float milesPerGallon, float dollarsPerGallon) returns float costMiles
+   // Calculate total cost: miles driven divided by miles per gallon gives gallons used,
+   // multiplied by dollars per gallon gives the cost
    costMiles = drivenMiles * (1.0 / milesPerGallon) * dollarsPerGallon
    return costMiles
 
@@ -7,15 +11,21 @@ Function Main() returns nothing
    float milesPerGallon
    float dollarsPerGallon
 
+   // Prompt user to enter the fuel efficiency of the vehicle (miles per gallon)
    Put "Enter miles per gallon: " to output
    milesPerGallon = Get next input
 
+   // Prompt user to enter the current price of fuel per gallon
    Put "Enter dollars per gallon: " to output
    dollarsPerGallon = Get next input
 
+   // Calculate and output driving cost for 10 miles, formatted to 2 decimal places
    Put DrivingCost(10.0, milesPerGallon, dollarsPerGallon) to output with 2 decimal places
-   Put " " to output
-   Put DrivingCost(50.0, milesPerGallon, dollarsPerGallon) to output with 2 decimal places
-   Put " " to output
-   Put DrivingCost(400.0, milesPerGallon, dollarsPerGallon) to output with 2 decimal places
+   Put " " to output  // Print a space to separate outputs
 
+   // Calculate and output driving cost for 50 miles, formatted to 2 decimal places
+   Put DrivingCost(50.0, milesPerGallon, dollarsPerGallon) to output with 2 decimal places
+   Put " " to output  // Print a space to separate outputs
+
+   // Calculate and output driving cost for 400 miles, formatted to 2 decimal places
+   Put DrivingCost(400.0, milesPerGallon, dollarsPerGallon) to output with 2 decimal places
